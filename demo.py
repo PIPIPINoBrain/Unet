@@ -17,8 +17,9 @@ from torchvision.utils import make_grid, save_image
 def main():
 
     parser = argparse.ArgumentParser(description="PyTorch Unet Test")
-    parser.add_argument('--in-path', type=str, required=True, help='image to test')
-    parser.add_argument('--ckpt', type=str, default='model_best.pth.tar',
+    parser.add_argument('--in-path', type=str, default=r'.\Data\test', help='image to test')
+    parser.add_argument('--out-path', type=str, default=r'.\Data\test', help='image result test')
+    parser.add_argument('--ckpt', type=str, default='.\pth_file\model_best.pth.tar',
                         help='saved model')
     parser.add_argument('--no-cuda', action='store_true', default=False,
                         help='disables CUDA training')
@@ -67,7 +68,6 @@ def main():
         s_time = time.time()
         image = Image.open(args.in_path+"/"+name).convert('RGB')
 
-
         target = Image.open(args.in_path+"/"+name).convert('L')
         sample = {'image': image, 'label': target}
         tensor_in = composed_transforms(sample)['image'].unsqueeze(0)
@@ -83,7 +83,7 @@ def main():
                                 3, normalize=False, range=(0, 9))
 
 
-        save_image(grid_image,'./'+"{}.png".format(name[0:-4]))
+        save_image(grid_image, args.out_path + '/'+"{}.png".format(name[0:-4]))
 
         u_time = time.time()
         img_time = u_time-s_time
