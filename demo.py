@@ -18,7 +18,7 @@ def main():
 
     parser = argparse.ArgumentParser(description="PyTorch Unet Test")
     parser.add_argument('--in-path', type=str, default=r'.\Data\test', help='image to test')
-    parser.add_argument('--out-path', type=str, default=r'.\Data\test', help='image result test')
+    parser.add_argument('--out-path', type=str, default=r'.\Data\test_out', help='image result test')
     parser.add_argument('--ckpt', type=str, default='.\pth_file\model_best.pth.tar',
                         help='saved model')
     parser.add_argument('--no-cuda', action='store_true', default=False,
