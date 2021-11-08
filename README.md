@@ -1,4 +1,6 @@
- #####Unet
+ 
+ 
+Unet
 传统unet分割，按 照要求可以快速训练，生成onnx文件，并移植到opencv中
 
 ###环境:
@@ -12,8 +14,7 @@ Segmentation存放了三个txt文件，train.txt存储了训练集图像文件�
 训练输出会在run中，并产生pth.tar文件最好权重吧，
 将权重放到pth_file中，从onnxGet.py得到onnx文件，也可以直接改路径。
 
-###测试pth.tar文件:
-
+###测试pth.tar文件：
 链接：https://pan.baidu.com/s/1gP1EAeTXxj-MptxfLDDkQA 
 提取码：mab6
 
@@ -21,5 +22,5 @@ Segmentation存放了三个txt文件，train.txt存储了训练集图像文件�
 
 
 
-项目做的是一个光板缺陷分割
+原始项目做的是一个光板缺陷分割
 
